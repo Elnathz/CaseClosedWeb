@@ -4,7 +4,7 @@
             <div class="flex items-center">
                 <div class="shrink-0">
                     <a href="">
-                        <img src="img/logo.png" alt="Your Company" class="size-14" />
+                        <img src="/img/logo.png" alt="Your Company" class="size-10" />
                     </a>
                 </div>
                 <div class="hidden md:block">
@@ -36,7 +36,7 @@
                             class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800">
                             <span class="absolute -inset-1.5"></span>
                             <span class="sr-only">Open user menu</span>
-                            <img src="img/pp.jpg" alt="profile" class="size-12 rounded-full" />
+                            <img src="/img/pp.jpg" alt="profile" class="size-10 rounded-full" />
                         </button>
 
                         <el-menu anchor="bottom end" popover
@@ -84,7 +84,7 @@
         <div class="border-t border-gray-700 pt-4 pb-3">
             <div class="flex items-center px-5">
                 <div class="shrink-0">
-                    <img src="img/pp.jpg" alt="" class="size-10 rounded-full" />
+                    <img src="/img/pp.jpg" alt="" class="size-10 rounded-full" />
                 </div>
                 <div class="ml-3">
                     <div class="text-base/5 font-medium text-white">Farros Rifantiarno</div>
