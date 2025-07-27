@@ -12,13 +12,13 @@ Route::get('/posts', function () {
             'title'     => 'Kasus Pembunuhan Ota Edo',
             'author'    => 'Koichi',
             'date'      => '01 July 2025',
-            'content'   => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit cum culpa consectetur doloribus eveniet dignissimos minima repudiandae, perferendis reiciendis assumenda temporibus et excepturi, tenetur quod est, voluptatem ut? Possimus eveniet, tenetur deleniti est voluptates earum beatae cupiditate iure quam dignissimos eaque sapiente? Commodi qui explicabo iusto voluptatibus voluptate! Esse, quaerat!'
+            'content'   => 'Kasus pembunuhan Ota Edo mengguncang banyak pihak, memperlihatkan dampak kelam kriminalitas dalam masyarakat. Tragedi ini mengungkap ketidakmampuan pengawasan dan pencegahan, serta dampak emosional besar bagi keluarga korban. Proses hukum yang transparan dan langkah preventif yang lebih efektif sangat diperlukan untuk mencegah kekerasan dan menjaga keselamatan masyarakat.'
         ],
         [
-            'title'     => 'Kasus Penculikan Uka Uka',
+            'title'     => 'Kasus Penculikan Oleh Suku Uka Uka',
             'author'    => 'Elnath',
             'date'      => '02 July 2025',
-            'content'   => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi nulla consectetur odit numquam nemo totam tempora! Cumque, alias aut. Id doloribus similique illo quos saepe est quo neque. Quis quisquam minima deserunt pariatur fugit voluptatum enim obcaecati nemo, est assumenda.'
+            'content'   => 'Penculikan oleh suku Uka-Uka mengguncang masyarakat, mencerminkan perbedaan besar dalam pandangan budaya dan norma hukum. Tindakan ini mungkin terkait dengan ritual atau tuntutan sosial suku tersebut. Penanganannya memerlukan pendekatan sensitif, mengutamakan keselamatan korban, sambil menghormati budaya lokal dan memastikan pemahaman antar pihak yang terlibat.'
         ]
     ];
     return view('posts', ['title' => 'Posts Page', 'posts' => $posts]);
