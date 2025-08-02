@@ -8,7 +8,7 @@
                 <a href="">{{ $post['author'] }}</a> | {{ $post['date'] }}
             </div>
             <p class="text-justify my-3 font-light">
-                {{ Str::limit($post['content'], 150) }}
+                {{ Str::limit($post['content'], 200) }}
             </p>
             <a href="/posts/{{ $post['slug'] }}" class="font-medium text-blue-400 hover:text-blue-700 hover:underline">Read More &raquo;</a>
         </article>

@@ -12,11 +12,7 @@ Route::get('/posts', function () {
     return view('posts', ['title' => 'Posts Page', 'posts' => $posts]);
 });
 
-Route::get('/posts/{slug}', function ($slug) {
-    $post = Post::find($slug);
-
-    if(!$post) abort(404);
-
+Route::get('/posts/{post:slug}', function (Post $post) {
     return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
 
