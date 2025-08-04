@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,15 +11,14 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class PostFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
-    {
+    { 
+        $title = fake()->sentence(rand(6, 8));
         return [
-            //
+            'title'     => $title,
+            'author_id' => User::factory(),
+            'slug'      => Str::slug($title),
+            'content'   => fake()->text(200)
         ];
     }
 }
