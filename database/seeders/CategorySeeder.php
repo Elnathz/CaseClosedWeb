@@ -15,17 +15,23 @@ class CategorySeeder extends Seeder
     {
         Category::create([
             'name' => 'Cyber Security',
-            'slug' => 'cyber-security'
+            'slug' => 'cyber-security',
+            'bgColor' => 'bg-red-200',
+            'textColor' => 'text-red-900'
         ]);
 
         Category::create([
             'name' => 'Artificial Intelligence',
-            'slug' => 'artificial-intelligence'
+            'slug' => 'artificial-intelligence',
+            'bgColor' => 'bg-blue-200',
+            'textColor' => 'text-blue-900'
         ]);
 
         Category::create([
             'name' => 'Web Programming',
-            'slug' => 'web-programming'
+            'slug' => 'web-programming',
+            'bgColor' => 'bg-green-200',
+            'textColor' => 'text-green-900'
         ]);
     }
 }

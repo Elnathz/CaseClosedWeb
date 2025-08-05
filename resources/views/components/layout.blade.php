@@ -17,14 +17,14 @@
 
 <body class="h-full">
     <div class="min-h-full">
-        <x-navbar/>
+        <x-navbar />
 
         <x-header :title="$title" />
         <main class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             {{ $slot }}
         </main>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 
 </html>

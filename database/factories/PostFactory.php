@@ -14,7 +14,7 @@ class PostFactory extends Factory
 {
     public function definition(): array
     { 
-        $title = fake()->sentence(rand(3, 5));
+        $title = fake()->sentence(rand(4, 6), false);
         return [
             'title'     => $title,
             'author_id' => User::factory(),
