@@ -6,7 +6,9 @@
                 <h2 class="mb-1 text-3xl tracking-tight">{{ $post['title'] }}</h2>
             </a>
             <div class="text-base text-gray-500">
-                <a href="/authors/{{ $post->author->id }}" class="hover:underline">{{ $post->author->name }}</a> | {{ $post['created_at'] }}
+                <p>{{ $post->author->name }} in <a
+                href="/categories/{{ $post->category->slug }}"
+                class=" text-gray-900 hover:underline">{{ $post->category->name }}</a> | {{ $post['created_at'] }} | {{ $post['created_at'] }}</p>
             </div>
             <p class="text-justify my-3 font-light">
                 {{ Str::limit($post['content'], 100) }}
