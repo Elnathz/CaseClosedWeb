@@ -1,16 +1,4 @@
 <x-layout :title="$title">
-    {{-- <article class="py-8 max-w-screen-md">
-        <h2 class="mb-1 text-3xl tracking-tight font-bold text-gray-900"></h2>
-        <div class="text-base text-gray-500">
-            By  in <a
-                href="/categories/{{ $post->category->slug }}"
-                class=" text-gray-900 hover:underline">{{ $post->category->name }}</a> | {{ $post['created_at'] }}
-        </div>
-        <p class="text-justify my-3 font-light">
-            {{ $post['content'] }}
-        </p>
-    </article> --}}
-
     <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
         <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
             <article
@@ -20,7 +8,7 @@
                         Go
                         back</a>
 
-                    <a href="/categories/{{ $post->category->slug }}"
+                    <a href="/posts?category={{ $post->category->slug }}"
                         class="{{ $post->category->bgColor }} {{ $post->category->textColor }} text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800 hover:underline hover:decoration-1 no-underline transition-all">
                         {{ $post->category->name }}
                     </a>
@@ -34,7 +22,7 @@
                                 alt="{{ $post->author->name }}">
 
                             <div>
-                                <a href="/authors/{{ $post->author->username }}" rel="author"
+                                <a href="/posts?author={{ $post->author->username }}" rel="author"
                                     class="text-xl font-bold text-gray-900 dark:text-white hover:underline">{{ $post->author->name }}</a>
 
                                 <p class="text-base text-gray-500 dark:text-gray-400"><time pubdate

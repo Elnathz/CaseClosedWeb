@@ -1,17 +1,21 @@
 <x-layout :title="$title">
-    <div class="mb-8 mt-4 px-4 mx-auto max-w-screen-xl lg:mb-16 lg:mt-8 lg:px-6">
-        <div class="grid gap-10 lg:grid-cols-3 md:grid-cols-2">
-            @foreach ($posts as $post)
+    <x-header-post>
+    </x-header-post>
+    <div class="mb-8 mt-4 px-4 mx-auto max-w-screen-xl lg:px-6">
+        {{ $posts->links() }}
+        <div class="grid gap-10 lg:grid-cols-3 md:grid-cols-2 mt-3">
+            @forelse ($posts as $post)
                 <article
-                    class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 grid grid-rows-[auto_1fr_auto] gap-1">
+                    class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 grid grid-rows-[auto_1fr_auto] gap-0.5">
 
                     {{-- bagian header --}}
                     <div class="flex justify-between items-center mb-5 text-gray-500">
-                        <a href="/categories/{{ $post->category->slug }}"
-                            class="{{ $post->category->bgColor}} {{ $post->category->textColor }} text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800 hover:underline hover:decoration-1 transition-all">
+                        <a href="/posts?category={{ $post->category->slug }}"
+                            class="{{ $post->category->bgColor }} {{ $post->category->textColor }} text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800 hover:underline hover:decoration-1 transition-all">
                             {{ $post->category->name }}
                         </a>
                         <span class="text-sm">{{ $post->created_at->diffForHumans() }}</span>
+
                     </div>
                     {{-- end of header --}}
 
@@ -21,8 +25,10 @@
                             <a href="/posts/{{ $post->slug }}"
                                 class="text-gray-900 hover:underline hover:decoration-1 transition-all">{{ $post['title'] }}</a>
                         </h2>
-    
-                        <p class="mb-5 font-light text-gray-500 dark:text-gray-400">{{ Str::limit($post['content'], 100) }}
+                    </div>
+                    <div>
+                        <p class="mb-5 font-light text-gray-500 dark:text-gray-400">
+                            {{ Str::limit($post['content'], 100) }}
                         </p>
                     </div>
                     {{-- end of content --}}
@@ -34,7 +40,8 @@
                                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
                                 alt="{{ $post->author->name }}" />
 
-                            <a href="/authors/{{ $post->author->username }}" class="font-medium dark:text-white hover:underline hover:decoration-1 text-xs">
+                            <a href="/posts?author={{ $post->author->username }}"
+                                class="font-medium dark:text-white hover:underline hover:decoration-1 text-xs">
                                 {{ $post->author->name }}
                             </a>
                         </div>
@@ -52,7 +59,12 @@
                     </div>
                     {{-- end of footer --}}
                 </article>
-            @endforeach
+            @empty
+            <div class="mt-8 col-span-full text-center">
+                <h2 class="font-bold text-4xl mb-2">Pencarian Tidak Ada!</h2>
+                <p class="font-light text-gray-600">coba cari dengan judul yang ada dan sesuai</p>
+            </div>
+            @endforelse
         </div>
     </div>
 </x-layout>
