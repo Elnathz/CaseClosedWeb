@@ -21,8 +21,13 @@
             <!-- Page Heading -->
             @isset($header)
                 <header class="bg-white shadow-sm">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
+                    <div class="max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+                        <div class="flex">
+                            <a href="/posts" class="hover:text-blue-700 hover:underline hover:decoration-1">&laquo; Back</a>
+                            <div class="ml-60 max-w-7xl">
+                                {{ $header }}
+                            </div>
+                        </div>
                     </div>
                 </header>
             @endisset
@@ -32,5 +37,6 @@
                 {{ $slot }}
             </main>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     </body>
 </html>
