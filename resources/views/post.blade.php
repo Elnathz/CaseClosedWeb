@@ -44,4 +44,5 @@
 
             </article>
         </div>
+    </main>
 </x-layout>

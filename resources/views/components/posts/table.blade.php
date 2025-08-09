@@ -89,83 +89,6 @@
                                         class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Apple
                                         (56)</label>
                                 </li>
-                                <li class="flex items-center">
-                                    <input id="fitbit" type="checkbox" value=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="fitbit"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Fitbit
-                                        (56)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="dell" type="checkbox" value=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="dell"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Dell
-                                        (56)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="asus" type="checkbox" value="" checked=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="asus"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Asus
-                                        (97)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="logitech" type="checkbox" value="" checked=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="logitech"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Logitech
-                                        (97)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="msi" type="checkbox" value="" checked=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="msi"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">MSI
-                                        (97)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="bosch" type="checkbox" value="" checked=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="bosch"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Bosch
-                                        (176)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="sony" type="checkbox" value=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="sony"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Sony
-                                        (234)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="samsung" type="checkbox" value="" checked=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="samsung"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Samsung
-                                        (76)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="canon" type="checkbox" value=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="canon"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Canon
-                                        (49)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="microsoft" type="checkbox" value=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="microsoft"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Microsoft
-                                        (45)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="razor" type="checkbox" value=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="razor"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Razor
-                                        (49)</label>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -224,8 +147,7 @@
                                                 </button>
                                             </li>
                                             <li>
-                                                <button type="button" data-modal-target="readProductModal"
-                                                    data-modal-toggle="readProductModal"
+                                                <a href="/dashboard/{{ $post->slug }}"
                                                     class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-gray-700 dark:text-gray-200">
                                                     <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg"
                                                         viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -234,7 +156,7 @@
                                                             d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" />
                                                     </svg>
                                                     Show Post
-                                                </button>
+                                                </a>
                                             </li>
                                             <li>
                                                 <button type="button" data-modal-target="deleteModal"
