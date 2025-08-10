@@ -90,17 +90,51 @@ class PostDashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Post $post)
     {
-        //
+        return view('dashboard.edit', ['post' => $post]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Post $post, Request $request)
     {
-        //
+        // validation
+        Validator::make(
+            $request->all(),
+            [
+                'title' => 'required|min:4|max:200',
+                'category_id' => 'required',
+                'content' => 'required|min:10'
+            ],
+            [
+                'title.required'    => ':attribute tidak boleh kosong!',
+                'category_id.required' => 'Pilih salah satu :attribute!',
+                'content.required'  => ':attribute tidak boleh kosong!',
+                'title.min'         => 'Title minimal 4 huruf',
+                'content.min'       => 'Isi :attribute minimal 4 huruf',
+                'title.max'         => 'Title maksimal 200 huruf',
+                'content.max'       => 'Isi :attribute maksimal 200 huruf'
+            ],
+            [
+                'title' => 'Title',
+                'category_id' => 'Category',
+                'content' => 'Content'
+            ]
+        )->validate();
+
+        // update post
+        $post->update([
+            'title' => $request->title,
+            'slug' => Str::slug($request->title),
+            'author_id' => Auth::user()->id,
+            'category_id' => $request->category_id,
+            'content' => $request->content
+        ]);
+
+        // redirect
+        return redirect('/dashboard')->with(['success' => '"' . Str::limit($request->title, 40) . '" berhasil diupdate!']);
     }
 
     /**
@@ -110,6 +144,6 @@ class PostDashboardController extends Controller
     {
         $post->delete();
 
-        return redirect('/dashboard')->with(['deleted' => '"' . Str::limit($post->title, 30) . '" berhasil dihapus!']);
+        return redirect('/dashboard')->with(['deleted' => '"' . Str::limit($post->title, 50) . '" berhasil dihapus!']);
     }
 }
