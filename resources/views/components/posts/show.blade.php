@@ -64,7 +64,7 @@
                         {{ $post['title'] }}</h1>
                 </header>
 
-                <p>
+                <p class="text-justify">
                     {{ $post->content }}
                 </p>
 
