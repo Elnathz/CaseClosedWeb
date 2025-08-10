@@ -76,7 +76,7 @@ class PostDashboardController extends Controller
             'content' => $request->content
         ]);
 
-        return redirect('/dashboard')->with(['success' => Str::limit($request->title, 30) . ' berhasil ditambahkan!']);
+        return redirect('/dashboard')->with(['success' => '"' . Str::limit($request->title, 30) . '" berhasil ditambahkan!']);
     }
 
     /**
@@ -106,8 +106,10 @@ class PostDashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect('/dashboard')->with(['deleted' => '"' . Str::limit($post->title, 30) . '" berhasil dihapus!']);
     }
 }
