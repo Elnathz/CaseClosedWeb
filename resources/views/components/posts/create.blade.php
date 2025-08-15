@@ -1,3 +1,6 @@
+@push('style')
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+@endpush
 <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
     <!-- Modal header -->
     <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
@@ -72,3 +75,14 @@
         </div>
     </form>
 </div>
+@push('script')
+    <!-- Include the Quill library -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+
+    <!-- Initialize Quill editor -->
+    <script>
+        const quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+    </script>
+@endpush

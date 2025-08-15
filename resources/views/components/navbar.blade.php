@@ -28,7 +28,8 @@
                                         focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm  cursor-pointer">
                                     <span class="absolute -inset-1.5"></span>
                                     <span class="sr-only">Open user menu</span>
-                                    <img src="/img/pp.jpg" alt="profile" class="size-10 rounded-full " />
+                                    <img src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('/img/default-profile.jpg') }}"
+                                        alt="{{ Auth::user()->name }}" class="size-10 rounded-full " />
                                     <div class="ml-4 text-gray-300 text-md my-auto">
                                         {{ Auth::user()->name }}
                                     </div>
@@ -105,7 +106,8 @@
             @if (Auth::check())
                 <div class="flex items-center px-5">
                     <div class="shrink-0">
-                        <img src="/img/pp.jpg" alt="{{ Auth::user()->name }}" class="size-10 rounded-full" />
+                        <img src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('img/default-profile.jpg') }}"
+                            alt="{{ Auth::user()->name }}" class="size-10 rounded-full" />
                     </div>
                     <div class="ml-3">
                         <div class="text-base/5 font-medium text-white">{{ Auth::user()->name }}</div>
