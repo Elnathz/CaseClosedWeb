@@ -9,13 +9,15 @@
                     class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 grid grid-rows-[30px_auto] gap-0.5">
 
                     {{-- bagian header --}}
-                    <div class="flex justify-between items-center mb-5 text-gray-500">
-                        <a href="/posts?category={{ $post->category->slug }}"
-                            class="{{ $post->category->bgColor }} {{ $post->category->textColor }} text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800 hover:underline hover:decoration-1 transition-all">
-                            {{ $post->category->name }}
-                        </a>
-                        <span class="text-sm">{{ $post->created_at->diffForHumans() }}</span>
-
+                    <div class="grid grid-rows-[40px_auto]">
+                        <div class="flex justify-between items-center mb-5 text-gray-500">
+                            <a href="/posts?category={{ $post->category->slug }}"
+                                class="{{ $post->category->bgColor }} {{ $post->category->textColor }} text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800 hover:underline hover:decoration-1 transition-all">
+                                {{ $post->category->name }}
+                            </a>
+                            <span class="text-sm">{{ $post->created_at->diffForHumans() }}</span>
+    
+                        </div>
                     </div>
                     {{-- end of header --}}
 
