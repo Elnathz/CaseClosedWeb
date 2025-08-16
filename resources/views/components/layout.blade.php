@@ -1,3 +1,4 @@
+@props(['title_post' => null, 'title' => null])
 <!DOCTYPE html>
 <html lang="id" class="h-full bg-gray-100">
 
@@ -12,7 +13,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
     @vite('resources/css/app.css')
 
-    <title>{{  config('app.name') . ' - ' . $title }}</title>
+    <title>{{  config('app.name') . ' - ' . ($title_post ?? $title ?? 'Singe Post')}}
+    </title>
 </head>
 
 <body class="h-full">

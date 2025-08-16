@@ -22,7 +22,7 @@ class PostDashboardController extends Controller
             $posts->where('title', 'LIKE', '%' . request('keyword') . '%');
         }
 
-        return view('dashboard.index', ['posts' => $posts->paginate(7)->withQueryString()]);
+        return view('dashboard.index', ['posts' => $posts->paginate(7)->withQueryString(), 'title' => 'Dashboard']);
     }
 
     /**
@@ -30,7 +30,7 @@ class PostDashboardController extends Controller
      */
     public function create()
     {
-        return view('dashboard.create');
+        return view('dashboard.create', ['title' => 'Create Post']);
     }
 
     /**
@@ -84,7 +84,7 @@ class PostDashboardController extends Controller
      */
     public function show(Post $post)
     {
-        return view('dashboard.show', ['post' => $post]);
+        return view('dashboard.show', ['post' => $post, 'title' => Str::limit($post->title, 10)]);
     }
 
     /**
@@ -92,7 +92,7 @@ class PostDashboardController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('dashboard.edit', ['post' => $post]);
+        return view('dashboard.edit', ['post' => $post, 'title' => 'Edit ' . Str::limit($post->title, 10)]);
     }
 
     /**

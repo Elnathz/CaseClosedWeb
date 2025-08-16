@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\PostDashboardController;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostDashboardController;
 
 Route::get('/', function () {
     return view('home', ['title' => 'Home Page']);
@@ -33,7 +34,11 @@ Route::get('/posts', function () {
 });
 
 Route::get('/posts/{post:slug}', function (Post $post) {
-    return view('post', ['title' => 'Single Post', 'post' => $post]);
+    return view('post', [
+        'titlePost' => Str::limit($post->title, 10),
+        'title' => 'Post ' . Str::words($post->title, 3, ''),
+        'post' => $post,
+    ]);
 });
 
 Route::get('/about', function () {

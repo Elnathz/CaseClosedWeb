@@ -1,8 +1,8 @@
-<x-app-layout>
+<x-app-layout :title="$title">
     <x-slot name="header">
         <div class="max-w-7xl py-6 px-4 sm:px-6 lg:px-8 mx-auto">
             <h2 class=" font-semibold text-xl text-gray-800 leading-tight">
-                View Post Detail "{{ $post->title }}"
+                View Post Detail "{{ Str::words($post->title, 3, '')}}"
             </h2>
         </div>
     </x-slot>

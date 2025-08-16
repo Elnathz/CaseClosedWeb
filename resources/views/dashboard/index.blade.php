@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout :title="$title">
     <x-slot name="header">
         <div class="max-w-7xl py-6 px-4 sm:px-6 lg:px-8 mx-auto flex gap-5">
             <a href="/posts" class="hover:text-blue-700 transition duration-300 ease-in-out">&laquo; Back</a>
