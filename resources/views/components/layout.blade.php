@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
     @vite('resources/css/app.css')
 
-    <title>{{ $title }}</title>
+    <title>{{  config('app.name') . ' - ' . $title }}</title>
 </head>
 
 <body class="h-full">
