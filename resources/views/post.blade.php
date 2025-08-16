@@ -18,7 +18,7 @@
                     <address class="flex items-center mb-6 not-italic">
                         <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                             <img class="mr-4 w-16 h-16 rounded-full"
-                                src="https://flowbite.com/docs/images/people/profile-picture-4.jpg"
+                                src="{{ $post->author->avatar ? asset('storage/' . $post->author->avatar) : asset('img/default-profile.jpg') }}"
                                 alt="{{ $post->author->name }}">
 
                             <div>
@@ -38,10 +38,11 @@
                         {{ $post['title'] }}</h1>
                 </header>
 
-                <p>
-                    {{ $post->content }}
-                </p>
+                <div class="text-justify">
+                    {!! $post->content !!}
+                </div>
 
             </article>
         </div>
+    </main>
 </x-layout>

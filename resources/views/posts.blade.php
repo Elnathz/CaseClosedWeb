@@ -26,10 +26,8 @@
                                 class="text-gray-900 hover:underline hover:decoration-1 transition-all">{{ $post['title'] }}</a>
                         </h2>
                     </div>
-                    <div>
-                        <p class="mb-5 font-light text-gray-500 dark:text-gray-400">
-                            {{ Str::limit($post['content'], 100) }}
-                        </p>
+                    <div class="mb-5 font-light text-gray-500 dark:text-gray-400">
+                        {{ Str::limit(strip_tags($post->content), 100) }}
                     </div>
                     {{-- end of content --}}
 
@@ -37,7 +35,7 @@
                     <div class="flex justify-between items-center">
                         <div class="flex items-center space-x-4">
                             <img class="w-7 h-7 rounded-full"
-                                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                                src="{{ $post->author->avatar ? asset('storage/' . $post->author->avatar) : asset('img/default-profile.jpg') }}"
                                 alt="{{ $post->author->name }}" />
 
                             <a href="/posts?author={{ $post->author->username }}"
@@ -60,10 +58,10 @@
                     {{-- end of footer --}}
                 </article>
             @empty
-            <div class="mt-8 col-span-full text-center">
-                <h2 class="font-bold text-4xl mb-2">Pencarian Tidak Ada!</h2>
-                <p class="font-light text-gray-600">coba cari dengan judul yang ada dan sesuai</p>
-            </div>
+                <div class="mt-8 col-span-full text-center">
+                    <h2 class="font-bold text-4xl mb-2">Pencarian Tidak Ada!</h2>
+                    <p class="font-light text-gray-600">coba cari dengan judul yang ada dan sesuai</p>
+                </div>
             @endforelse
         </div>
     </div>

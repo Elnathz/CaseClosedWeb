@@ -12,7 +12,11 @@
 */
 
 pest()->extend(Tests\TestCase::class)
+<<<<<<< HEAD
  // ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
+=======
+    ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
+>>>>>>> backend-breeze
     ->in('Feature');
 
 /*

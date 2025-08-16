@@ -13,7 +13,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Post extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
+
     protected $with = ['author', 'category'];
 
     public function author(): BelongsTo

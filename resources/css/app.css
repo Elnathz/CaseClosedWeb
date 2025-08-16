@@ -3,6 +3,7 @@
 
 @plugin "flowbite/plugin";
 @plugin "flowbite-typography";
+@plugin '@tailwindcss/forms';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -22,9 +23,9 @@
     --color-primary-800: #1e40af;
     --color-primary-900: #1e3a8a;
 
-    --font-sans: "Inter", InterVariable, "Instrument Sans", ui-sans-serif,
-        system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-        "Segoe UI Symbol", "Noto Color Emoji";
+    --font-sans: "Inter", InterVariable, "Instrument Sans", Figtree,
+        ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-body: "Inter", "ui-sans-serif", "system-ui", "-apple-system",
         "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", "Arial",
         "Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji",
@@ -33,5 +34,25 @@
         "Liberation Mono", "Courier New", "monospace";
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
+}
+@utility no-scrollbar {
+    @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
