@@ -6,7 +6,7 @@
         <div class="grid gap-10 lg:grid-cols-3 md:grid-cols-2 mt-3">
             @forelse ($posts as $post)
                 <article
-                    class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 grid grid-rows-[auto_1fr_auto] gap-0.5">
+                    class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 grid grid-rows-[30px_auto] gap-0.5">
 
                     {{-- bagian header --}}
                     <div class="flex justify-between items-center mb-5 text-gray-500">
@@ -20,14 +20,20 @@
                     {{-- end of header --}}
 
                     {{-- bagian content --}}
-                    <div>
+                    <div class="grid grid-rows-[80px_auto]">
                         <h2 class="mb-2 text-2xl font-bold tracking-tight dark:text-white transition-all">
                             <a href="/posts/{{ $post->slug }}"
-                                class="text-gray-900 hover:underline hover:decoration-1 transition-all">{{ $post['title'] }}</a>
+                                class="text-gray-900 hover:underline hover:decoration-1 transition-all">
+                                @if (Str::length(strip_tags($post->title)) >= 30)
+                                    {{ Str::limit(strip_tags($post->title), 30, '..') }}
+                                @else
+                                    {{ $post['title'] }}
+                                @endif
+                            </a>
                         </h2>
-                    </div>
-                    <div class="mb-5 font-light text-gray-500 dark:text-gray-400">
-                        {{ Str::limit(strip_tags($post->content), 100) }}
+                        <div class="mb-5 font-light text-gray-500 dark:text-gray-400">
+                            {{ Str::limit(strip_tags($post->content), 100) }}
+                        </div>
                     </div>
                     {{-- end of content --}}
 
@@ -40,7 +46,7 @@
 
                             <a href="/posts?author={{ $post->author->username }}"
                                 class="font-medium dark:text-white hover:underline hover:decoration-1 text-xs">
-                                {{ $post->author->name }}
+                                {{ Str::words($post->author->name, 3, '') }}
                             </a>
                         </div>
 
