@@ -15,11 +15,7 @@ class PostSeeder extends Seeder
      */
     public function run(): void
     {
-<<<<<<< HEAD
-        Post::factory(30)->recycle([
-=======
         Post::factory(100)->recycle([
->>>>>>> backend-breeze
             Category::all(),
             User::all()
         ])->create();
