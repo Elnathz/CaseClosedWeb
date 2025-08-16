@@ -4,7 +4,7 @@
             <div class="flex items-center">
                 <div class="shrink-0">
                     <a href="">
-                        <img src="/img/logo.png" alt="Your Company" class="size-10" />
+                        <img src="/img/logo.png" alt="{{ config('app.name') }}" class="size-10" />
                     </a>
                 </div>
                 <div class="hidden md:block">
