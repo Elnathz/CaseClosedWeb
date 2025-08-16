@@ -1,1 +1,0 @@
-<img src="/img/logo.svg" alt="{{ config('app.name') }}" class="size-30" >
