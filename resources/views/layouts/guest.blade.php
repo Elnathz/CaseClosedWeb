@@ -21,7 +21,7 @@
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
         <div>
             <a href="/">
-                <img src="/img/logo.svg" alt="{{ config('app.name') }}" class="size-30" >
+                <img class="w-[120px] h-[120px]" src="/img/logo.svg" alt="{{ config('app.name') }}">
             </a>
         </div>
 
