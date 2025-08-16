@@ -38,9 +38,9 @@
                         {{ $post['title'] }}</h1>
                 </header>
 
-                <p class="text-justify">
-                    {{ $post->content }}
-                </p>
+                <div class="text-justify">
+                    {!! $post->content !!}
+                </div>
 
             </article>
         </div>

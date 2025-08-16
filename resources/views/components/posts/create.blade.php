@@ -9,10 +9,10 @@
     </div>
     <!-- Modal body -->
 
-    <form action="/dashboard" method="POST">
+    <form action="/dashboard" method="POST" id="post-form">
         @csrf
 
-        <div class="grid gap-4 mb-4 sm:grid-cols-2">
+        <div class="grid gap-4 sm:grid-cols-2">
             <div>
                 <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
                 <input type="text" name="title" id="title"
@@ -20,9 +20,9 @@
                         bg-red-50 border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500
                     @enderror border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Type title post" autofocus value="{{ old('title') }}">
-                    @error('title')
-                        <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
-                    @enderror
+                @error('title')
+                    <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
+                @enderror
             </div>
 
             <div><label for="category_id"
@@ -42,19 +42,22 @@
                 @enderror
             </div>
 
-            <div class="sm:col-span-2"><label for="content"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Content</label>
+            <div>
+                <label for="content"
+                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Content</label>
                 <textarea id="content" rows="4" name="content"
-                    class="@error('content')
-                        bg-red-50 border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500
-                    @enderror 
-                    block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    class="hidden @error('content')
+                            bg-red-50 border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500
+                        @enderror 
+                        block w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Write your content here">{{ old('content') }}</textarea>
-
-                    @error('content')
-                    <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
-                @enderror
             </div>
+        </div>
+        <div class="mb-3">
+            <div id="editor" class="sm:col-span-2 rounded-b-xl"></div>
+            @error('content')
+                <p class="my-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
+            @enderror
         </div>
         <div class="flex gap-4">
             <button type="submit"
@@ -73,7 +76,8 @@
                 Cancel
             </a>
         </div>
-    </form>
+</div>
+</form>
 </div>
 @push('script')
     <!-- Include the Quill library -->
@@ -82,7 +86,27 @@
     <!-- Initialize Quill editor -->
     <script>
         const quill = new Quill('#editor', {
-            theme: 'snow'
+            theme: 'snow',
+            placeholder: 'Write your content here',
+        });
+
+        const postForm = document.querySelector('#post-form');
+        const bodyContent = document.querySelector('#content');
+        const quillEditor = document.querySelector('#editor');
+
+        postForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Stop form submit
+            let content = quill.root.innerHTML.trim(); // Ambil isi editor
+
+            // Cek kalau hanya "<p><br></p>" atau kosong
+            if (content === '<p><br></p>' || content === '') {
+                quill.setContents([]); // Reset editor jadi kosong
+                content = ''; // Pastikan variabel juga kosong
+                console.log(content);
+            }
+            bodyContent.value = content;
+
+            postForm.submit();
         });
     </script>
 @endpush

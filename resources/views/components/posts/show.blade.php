@@ -106,7 +106,7 @@
             </header>
 
             <p class="text-justify">
-                {{ $post->content }}
+                {!! ($post->content) !!}
             </p>
 
         </article>
